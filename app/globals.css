@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Theme variables
+*/
+
+@layer base {
+  :root {
+    --background: #f0f0f0;
+    --foreground: #1a0e05;
+
+    --card: #e0e0e0;
+    --card-foreground: #1a0e05;
+
+    --popover: #e0e0e0;
+    --popover-foreground: #1a0e05;
+
+    --primary: #a05a2c;
+    --primary-foreground: #f0f0f0;
+
+    --secondary: #b03030;
+    --secondary-foreground: #f0f0f0;
+
+    --muted: #e0e0e0;
+    --muted-foreground: #3b2a1a;
+
+    --accent: #b03030;
+    --accent-foreground: #f0f0f0;
+
+    --destructive: #b03030;
+    --destructive-foreground: #f0f0f0;
+
+    --border: #1a0e05;
+    --input: #1a0e05;
+    --ring: #a05a2c;
+
+    --radius: 0.25rem;
+  }
+
+  [data-theme='dark'] {
+    --background: #0d0d0d;
+    --foreground: #e0e0e0;
+
+    --card: #1a1a1a;
+    --card-foreground: #e0e0e0;
+
+    --popover: #1a1a1a;
+    --popover-foreground: #e0e0e0;
+
+    --primary: #ff0000;
+    --primary-foreground: #0d0d0d;
+
+    --secondary: #2e2e2e;
+    --secondary-foreground: #e0e0e0;
+
+    --muted: #4a4a4a;
+    --muted-foreground: #b0b0b0;
+
+    --accent: #ff0000;
+    --accent-foreground: #0d0d0d;
+
+    --destructive: #ff0000;
+    --destructive-foreground: #e0e0e0;
+
+    --border: #2e2e2e;
+    --input: #1a1a1a;
+    --ring: #ff0000;
+  }
+}
+
+/*
+  Theme switching based on this tweet from Devon Govett
+  https://twitter.com/devongovett/status/1757131288144663027
+*/
+@layer base {
+  :root {
+    --theme-light: initial;
+    --theme-dark: ;
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --theme-light: ;
+      --theme-dark: initial;
+    }
+  }
+
+  [data-theme='light'] {
+    --theme-light: initial;
+    --theme-dark: ;
+    color-scheme: light;
+  }
+
+  [data-theme='dark'] {
+    --theme-light: ;
+    --theme-dark: initial;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
