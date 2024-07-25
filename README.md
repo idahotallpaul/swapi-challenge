@@ -1,4 +1,4 @@
-# Wevr Jobs
+# Swiftly SWAPI
 
 This is a demo project for a job application to Swiftly.com.
 
